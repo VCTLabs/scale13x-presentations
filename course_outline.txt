@@ -1,0 +1,71 @@
+SCaLE 13x - SCaLEU / shortcourse (either half day or full day)
+
+Title: Embedded Linux Development with Yocto/OpenEmbedded: Easily Build A Custom Linux OS for Your Favorite Device
+
+Facility / setup:
+
+Pre-clone and fetch repos and downloads, provide local git and/or rsync, still need active Internet connection, but should keep most traffic local.  Need "classroom" wired or wireless infrastructure (minimum at least our own AP).  Wired GB ethernet would be ideal, can make ethernet cable a req (maximize productive time, minimize wait time).  Can let students fetch from our local mirror while we do the lecture part.
+
+Should recommend people bring laptops and bb[w|b], rpi if possible, otherwise something with full Yocto/qemu deps.
+
+Time-frame:
+
+Half day course hands-on would focus on core Yocto/OE layers, default qemux86 build, and one machine (eg, RaspberryPi, BeagleBone, other).  Could seek donors to provide one board per student, could require one as part of course fee, or share a few examples for the deployment (one per student is preferable).  RPi ~$40, BBB ~$50 (plus 10% edu discount at Adafruit).  Full day course would include multiple machines/deployments, compare/contrast, more hands-on in general.  RPi is a little cheaper, but BeagleBone is now in mainline/poky and has good intro/out-of-box web (black) or serial (white) interface.
+
+Update: time-frame is ???  One hour plus?
+
+Short description:
+
+This is inteneded as a "bootcamp" course for embedded developers who have not used OpenEmbedded, as well as current Linux developers and users familiar with at least one common embedded Linux platform (eg, RaspberryPi, BeagleBone, Wandboard, etc).  The course will provide an in-depth overview of the Yocto Project, the core OpenEmbedded layers and what they are, supported hardware, available documentation and other resources, build requirements, and how to setup, customize, build, and deploy your own embedded Linux OS image, root filesystem, kernel and bootloader, etc.  Hands-on portion will include installing build host dependencies and Yocto, building and deploying target images/SDKs, and basic troubleshooting/debugging.   A laptop is required for either local builds (quad-core or better recommended) or shared screen session builds (anything with a browser and ssh).
+
+Long:
+
+Course Outline:
+
+1)
+
+ * Introduction to Yocto / Poky / OpenEmbedded / OE-core
+ * Documentation and Help
+ * Build Host / Distro Requirements
+ * Obtaining the Source and Preparing the Build Environment
+
+2)
+
+ * Build Overview, Core Images
+ * Building an Image, Config Options
+ * Deploying and Using the Result
+ * Potential Failures
+
+3)
+
+ * Inside the Yocto/OE Development Environment
+  - User Configuration, Metadata, Machine Configuration
+   + Distro Layer, BSP Layer, Software Layers
+  - Recipes and Sources
+   + Upstream Releases/Repos, Local Projects
+   + Source Mirror(s)
+  - Package Feeds
+  - BitBake - Recipes and Tasks
+   + Source Fetching, Patching, Configuration, and Compilation
+   + Package Splitting, Image Generation, SDK Generation
+  - Images, SDKs, external tools (Eclipse TCF Agent, remote gdb)
+
+4) 
+
+ * Hands-On Poky
+  - qemux86
+  - beaglebone
+ * Add Upstream BSP
+  - RaspberryPi layer
+  - BeagleBone / TI layers
+ * Customizing Your Build
+  - Kernel Version and Configuration
+  - New Kernel Recipe
+  - Modifying and Adding Packages
+ * Deployment and Debugging
+  - Deploy Tips and Hacks
+  - SDK Tools
+  - GDB Server and Image Build Options
+  - Eclipse and TCF Agent
+
+
