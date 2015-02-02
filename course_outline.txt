@@ -67,5 +67,8 @@ Course Outline:
   - SDK Tools
   - GDB Server and Image Build Options
   - Eclipse and TCF Agent
+ * User INterfaces
+  - Toaster
+  - Hob
 
 
