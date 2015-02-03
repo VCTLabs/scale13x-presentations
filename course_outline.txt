@@ -1,4 +1,4 @@
-SCaLE 13x - SCaLEU / shortcourse (either half day or full day)
+SCaLE 13x - SCaLEU / shortcourse
 
 Title: Embedded Linux Development with Yocto/OpenEmbedded: Easily Build A Custom Linux OS for Your Favorite Device
 
@@ -12,15 +12,34 @@ Time-frame:
 
 Half day course hands-on would focus on core Yocto/OE layers, default qemux86 build, and one machine (eg, RaspberryPi, BeagleBone, other).  Could seek donors to provide one board per student, could require one as part of course fee, or share a few examples for the deployment (one per student is preferable).  RPi ~$40, BBB ~$50 (plus 10% edu discount at Adafruit).  Full day course would include multiple machines/deployments, compare/contrast, more hands-on in general.  RPi is a little cheaper, but BeagleBone is now in mainline/poky and has good intro/out-of-box web (black) or serial (white) interface.
 
-Update: time-frame is ???  One hour plus?
 
-Short description:
 
-This is inteneded as a "bootcamp" course for embedded developers who have not used OpenEmbedded, as well as current Linux developers and users familiar with at least one common embedded Linux platform (eg, RaspberryPi, BeagleBone, Wandboard, etc).  The course will provide an in-depth overview of the Yocto Project, the core OpenEmbedded layers and what they are, supported hardware, available documentation and other resources, build requirements, and how to setup, customize, build, and deploy your own embedded Linux OS image, root filesystem, kernel and bootloader, etc.  Hands-on portion will include installing build host dependencies and Yocto, building and deploying target images/SDKs, and basic troubleshooting/debugging.   A laptop is required for either local builds (quad-core or better recommended) or shared screen session builds (anything with a browser and ssh).
+Updated SCaLE 13x 2015 Requirements:
+
+Time-frame:
+
+One hour for short-short version.  Approx. 20 minutes overview with slides (section 1 and 2 below) and 30 minutes demo (see section 4).  Handout covers sections 3 and 4 (with maybe a little merging/overlap between 2 and 3).
+
+Facility / Setup
+
+Use upstream poky (open-embedded too, check sync status of upstream repos) and meta-raspberrypi.  Pre-clone and build one each:
+
+1) qemux86 (poky only)
+2) beaglebone (poky only)
+3) rpi (with upstream BSP)
+
+Build basic console and sato/QT5 demo images (check status of sato vs. wayland as default demo image), aand at least console variants with debug/other tools using image features.  Do select cleans/rebuilds and kernel rebuilds/deploys (using qemu, but talk about rebuilding images/kernels for other machines).
+
+Recommend laptops (beaglebones/rpis optional) but not required (do we even need to?).
+
+
+Description:
+
+This is inteneded as a "bootcamp" course for embedded developers who have not used OpenEmbedded, as well as current Linux developers and users familiar with at least one common embedded Linux platform (eg, RaspberryPi, BeagleBone, Wandboard, etc).  The course will provide an in-depth overview of the Yocto Project, the core OpenEmbedded layers and what they are, supported hardware, available documentation and other resources, build requirements, and how to setup, customize, build, and deploy your own embedded Linux OS image, root filesystem, kernel and bootloader, etc.  Handout will include installing build host dependencies and Yocto, building and deploying target images/SDKs, and basic troubleshooting/debugging/WhatIfScenarios.   A laptop is recommended for either local builds (quad-core or better recommended) or local web interface (eg, Toaster).
 
 Long:
 
-Course Outline:
+Course Slides / Handout Outline:
 
 1)
 
@@ -38,17 +57,25 @@ Course Outline:
 
 3)
 
+ * Build Host requirements / Potential Issues
+  - Gentoo amd64, VMs, and chroots
+  - Build errors "command not found..."
  * Inside the Yocto/OE Development Environment
   - User Configuration, Metadata, Machine Configuration
    + Distro Layer, BSP Layer, Software Layers
+   + Kernel Recipes and Versions
+   + Image / Package Configuration
   - Recipes and Sources
+   + File Types (Recipes, BBClass, Includes)
    + Upstream Releases/Repos, Local Projects
    + Source Mirror(s)
   - Package Feeds
+   + Ipk Feed Support
   - BitBake - Recipes and Tasks
    + Source Fetching, Patching, Configuration, and Compilation
    + Package Splitting, Image Generation, SDK Generation
-  - Images, SDKs, external tools (Eclipse TCF Agent, remote gdb)
+   + Custom Recipes and Layers
+  - SDKs, external tools (Eclipse TCF Agent, remote gdb)
 
 4) 
 
@@ -67,7 +94,7 @@ Course Outline:
   - SDK Tools
   - GDB Server and Image Build Options
   - Eclipse and TCF Agent
- * User INterfaces
+ * Graphical User Interfaces
   - Toaster
   - Hob
 
