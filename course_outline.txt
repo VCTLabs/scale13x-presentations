@@ -28,7 +28,7 @@ Use upstream poky (open-embedded too, check sync status of upstream repos) and m
 2) beaglebone (poky only)
 3) rpi (with upstream BSP)
 
-Build basic console and sato/QT5 demo images (check status of sato vs. wayland as default demo image), aand at least console variants with debug/other tools using image features.  Do select cleans/rebuilds and kernel rebuilds/deploys (using qemu, but talk about rebuilding images/kernels for other machines).
+Build basic console and sato/QT5 demo images (check status of sato vs. wayland as default demo image), and at least console variants with debug/other tools using image features.  Do select cleans/rebuilds and kernel rebuilds/deploys (using qemu, but talk about rebuilding images/kernels for other machines).
 
 Recommend laptops (beaglebones/rpis optional) but not required (do we even need to?).
 
@@ -71,7 +71,8 @@ Course Slides / Handout Outline:
    + Source Mirror(s)
   - Package Feeds
    + Ipk Feed Support
-  - BitBake - Recipes and Tasks
+  - BitBake Tips and Tricks
+   + Recipes and Tasks
    + Source Fetching, Patching, Configuration, and Compilation
    + Package Splitting, Image Generation, SDK Generation
    + Custom Recipes and Layers
