@@ -1,0 +1,109 @@
+When it comes to desktop or server systems, USB seems to be a rather
+straight-forward bus that usually "just works" as intended, but
+there can be some interesting twists when you start looking at
+USB support on embedded devices -- differences both good and bad.
+
+A Bit of USB Overview
+---------------------
+
+* an asymmetrical bus 
+  * one host, many targets
+  * host is extremely authoritarian
+    * enumeration: roll call, handing out ids, choosing assignments
+    * controls every phase of every transaction
+  * full chain of command: power behind the throne, shadow minion
+* target address hierarchy: device id, interface, endpoint
+
+
+Embedded USB Quirks
+---------------------
+
+USB host quirks
+* limitations on powering devices
+* hubs not supported
+* problems with multiple bus speeds
+* transfer speed issues
+* bizarre compatibility glitches 
+
+Coping with quirky hosts
+* external supplies for power-hungry USB targets
+* stress test unproven platforms
+  * USB storage tests 
+  * use test driver: usbtest module + "gadget zero"
+  * test all that are relevant to system requirements:
+    * multiple devices 
+    * multiple speeds
+    * connects/disconnects
+* sniff traffic to understand detected problems
+  * software - enable driver debugging
+  * software - usbmon + wireshark
+  * hardware - Total Phase
+* hedge your bets: consider separate USB controller (PCI/PCIe) 
+
+Embedded USB Features
+---------------------
+
+USB device controllers
+
+OTG (On-The-Go) controllers
+* split personality: host or target role
+  * cabling decides default role
+* additional protocols
+  * SRP (Session Request Protocol)
+    * allows powering down bus when not in use
+  * HNP (Host Negotiation Protocol)
+    * dynamic role swap
+  * host-role whitelist allowing specific target protocols
+
+Embedded Linux drivers
+
+* host hardware drivers
+  * some boards support standard host interfaces OHCI/EHCI (not many XHCI!)
+  * many use musb (Mentor USB) instead (or in addition)
+
+* target hardware ("peripheral controller") drivers 
+  * aka UDC drivers (USB Device Controller)
+  * not all are upstreamed (Atmel, for instance)
+
+* host-side protocol drivers
+  * standard protocol drivers
+    * storage
+    * ethernet
+    * HID (Human Interface Device)
+  * custom protocol drivers 
+    * usbfs + libusb
+
+* target-role protocol ("gadget") drivers
+  * standard protocol drivers
+    * storage
+    * ethernet
+    * HID (Human Interface Device)
+  * custom protocol drivers
+    * gadgetfs
+    * functionfs
+    * app examples: mtp, adb, usbtest slave
+
+* composite gadget framework
+  * a few predefined compile-time protocol combinations
+  * mix-and-match protocols at runtime via configfs
+
+* test drivers - use to stress different parts of USB system
+  * dummy HCD (Host Controller Driver, but has target too)
+    * simulated host controller
+    * simulated peripheral controller 
+  * usb-skeleton
+    * trivial protocol driver
+    * creates devices for raw dump of data to/from a pair of target endpoints
+  * usbtest module
+    * host-side protocol driver for running tests
+      http://processors.wiki.ti.com/index.php/Usbtest
+    * needs "gadget zero" target 
+    * testusb app to run tests
+  * gadget zero
+    * target-side protocol driver for responding to tests
+    * two configurations available
+     * pattern data (usbtest)
+     * loopback (usb-skeleton or libusb)
+  * userspace gadget zero
+    * gadgetfs + usb.c example app (http://www.linux-usb.org/gadget/usb.c)
+    * functionfs + ffs-test.c example app (linux/tools/usb/ffs-test.c)
