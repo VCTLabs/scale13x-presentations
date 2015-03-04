@@ -52,11 +52,13 @@ Embedded Linux Development with Yocto/OpenEmbedded: Easily Build A Custom Linux 
 
 Updated SCaLE 13x 2015 Requirements:
 
-Time-frame:
+Time-frame
+----------
 
 One hour for short-short version.  Approx. 20 minutes overview with slides (section 1 and 2 below) and 30 minutes demo (see section 4).  Handout covers sections 3 and 4 (with maybe a little merging/overlap between 2 and 3).
 
 Facility / Setup
+----------------
 
 Use upstream poky (maybe open-embedded too, check sync status of upstream repos) and meta-raspberrypi.  Pre-clone and build one each:
 
@@ -69,13 +71,13 @@ Build basic console and sato/QT5 demo images (check status of sato vs. weston as
 Recommend laptops (beaglebones/rpis optional) but not required.
 
 
-Description:
+Description
+-----------
 
 This is inteneded as a "bootcamp" course for embedded developers who have not used OpenEmbedded, as well as current Linux developers and users familiar with at least one common embedded Linux platform (eg, RaspberryPi, BeagleBone, Wandboard, etc).  The course will provide an in-depth overview of the Yocto Project, the core OpenEmbedded layers and what they are, supported hardware, available documentation and other resources, build requirements, and how to setup, customize, build, and deploy your own embedded Linux OS image, root filesystem, kernel and bootloader, etc.  Handout will include installing build host dependencies and Yocto, building and deploying target images/SDKs, and basic troubleshooting/debugging/WhatIfScenarios.   A laptop is recommended for either local builds (quad-core or better recommended) or local web interface (eg, Toaster).
 
-Long:
-
-Course Slides / Handout Outline:
+Course Slides / Handout Outline
+-------------------------------
 
 + Introduction
 
@@ -163,6 +165,9 @@ Slides and slides with notes (in PDF) are in the bin directory, as well as print
 
 ARM Linux Kernels and Graphics Drivers on Popular "Open" Hardware: Bleeding Edge vs. Vendor Blobs and Kernel Forks - How much is in Mainline, and How Open is Open?
 ===================================================================================================================================================================
+
+Abstract
+--------
 
 This talk/workshop will attempt to cover the current state of open source support on several popular ARM boards and their variants.  Primary components include accelerated support for graphics hardware, mainline kernel support (largely device tree files and their "completeness"), and upstream (DENX) u-boot support.  The current state of mainline kernel/u-boot support and associated patches, along with the current build/deploy process, will be covered in detail for several popular open source boards/variants, including:
 
