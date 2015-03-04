@@ -1,3 +1,52 @@
+USB on embedded systems: quirky but versatile
+=============================================
+
+Abstract
+--------
+
+Boot a beaglebone running XFCE with USB mouse and keyboard connected, and both
+input devices will likely behave as expected. Venture away from this limited
+use case (ubiquitous embedded board serving as mini-desktop-replacement), and
+things start to get more interesting. In some corners of the embedded USB
+world, There Be Dragons -- we'll discuss both common limitations of embedded
+USB host controllers and examples of weird quirks encountered in the wild.
+Moving on to the unique features of embedded USB, we'll cover playing the USB
+device role with "gadget" drivers, and the further twist of OTG (On-the-Go)
+support that enables host/device role swapping.
+
+Slides
+------
+
+.svg format, produced in Inkscape with JessyInk extension (http://wiki.inkscape.org/wiki/index.php/Tools#JessyInk)
+
+bin/usb_quirky_versatile_paths.svg - fonts converted to paths, for viewing not editing
+usb/usb_quirky_versatile.svg - non-embedded fonts, for editing (need proper fonts installed)
+
+A Tale of Two Build Systems: Buildroot and OpenEmbedded
+=======================================================
+
+Abstract
+--------
+
+The embedded Linux ecosystem offers a heathy diversity of build systems
+tailored to different niches, unlike proprietary OSes that tend to present a
+build system controlled by the owner as the One True build system. This
+presentation will focus on two of the embedded Linux build systems that have
+exhibited the most staying power, Buildroot and OpenEmbedded, being sure to
+answer some burning questions about them along the way:
+
+* Which build system is the more natural choice for MMU-less micros?
+* Which build system is the foundation for many consumer-electronics distributions?
+* Which build system has its own theme song??
+
+Slides
+------
+
+.svg format, produced in Inkscape with JessyInk extension (http://wiki.inkscape.org/wiki/index.php/Tools#JessyInk)
+
+bin/buildroot_oe_paths.svg - fonts converted to paths, for viewing not editing
+buildroot_oe/buildroot_oe.svg - non-embedded fonts, for editing (need proper fonts installed)
+
 Embedded Linux Development with Yocto/OpenEmbedded: Easily Build A Custom Linux OS for Your Favorite Device
 ===========================================================================================================
 
@@ -106,6 +155,11 @@ Course Slides / Handout Outline:
   - Toaster
   - Hob
 
+Slides
+------
+
+Slides and slides with notes (in PDF) are in the bin directory, as well as printable slides/notes in PDF handout formt (portrait).  Original .odp files are in their respective topic directories.
+
 
 ARM Linux Kernels and Graphics Drivers on Popular "Open" Hardware: Bleeding Edge vs. Vendor Blobs and Kernel Forks - How much is in Mainline, and How Open is Open?
 ===================================================================================================================================================================
@@ -143,54 +197,11 @@ Current kernels:
 * wandboard-3.18.0.tar.bz2
 
 
-USB on embedded systems: quirky but versatile
-=============================================
-
-Abstract
---------
-
-Boot a beaglebone running XFCE with USB mouse and keyboard connected, and both
-input devices will likely behave as expected. Venture away from this limited
-use case (ubiquitous embedded board serving as mini-desktop-replacement), and
-things start to get more interesting. In some corners of the embedded USB
-world, There Be Dragons -- we'll discuss both common limitations of embedded
-USB host controllers and examples of weird quirks encountered in the wild.
-Moving on to the unique features of embedded USB, we'll cover playing the USB
-device role with "gadget" drivers, and the further twist of OTG (On-the-Go)
-support that enables host/device role swapping.
-
 Slides
 ------
 
-.svg format, produced in Inkscape with JessyInk extension (http://wiki.inkscape.org/wiki/index.php/Tools#JessyInk)
+Slides (in PDF) are in the bin directory.  Original .odp files are in their respective topic directories.
 
-bin/usb_quirky_versatile_paths.svg - fonts converted to paths, for viewing not editing
-usb/usb_quirky_versatile.svg - non-embedded fonts, for editing (need proper fonts installed)
-
-A Tale of Two Build Systems: Buildroot and OpenEmbedded
-=======================================================
-
-Abstract
---------
-
-The embedded Linux ecosystem offers a heathy diversity of build systems
-tailored to different niches, unlike proprietary OSes that tend to present a
-build system controlled by the owner as the One True build system. This
-presentation will focus on two of the embedded Linux build systems that have
-exhibited the most staying power, Buildroot and OpenEmbedded, being sure to
-answer some burning questions about them along the way:
-
-* Which build system is the more natural choice for MMU-less micros?
-* Which build system is the foundation for many consumer-electronics distributions?
-* Which build system has its own theme song??
-
-Slides
-------
-
-.svg format, produced in Inkscape with JessyInk extension (http://wiki.inkscape.org/wiki/index.php/Tools#JessyInk)
-
-bin/buildroot_oe_paths.svg - fonts converted to paths, for viewing not editing
-buildroot_oe/buildroot_oe.svg - non-embedded fonts, for editing (need proper fonts installed)
 
 Notes on .svg slides
 ====================
