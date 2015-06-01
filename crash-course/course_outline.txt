@@ -60,6 +60,8 @@ Course Slides / Handout Outline:
  * Build Host requirements / Potential Issues
   - Gentoo amd64, VMs, and chroots
   - Build errors "command not found..."
+ * OpenEmbedded Workflow / Layers
+  -
  * Inside the Yocto/OE Development Environment
   - User Configuration, Metadata, Machine Configuration
    + Distro Layer, BSP Layer, Software Layers
