@@ -54,14 +54,19 @@ Course Slides / Handout Outline:
  * Building an Image, Config Options
  * Deploying and Using the Result
  * Potential Failures
-
-3)
-
  * Build Host requirements / Potential Issues
   - Gentoo amd64, VMs, and chroots
   - Build errors "command not found..."
+
+3)
+
  * OpenEmbedded Workflow / Layers
-  -
+  - Yocto is a BSP (and a project)
+  - Yocto project BSP and Poky distribution
+   + Self-contained set of “demo” machines and OE layers
+
+N)
+
  * Inside the Yocto/OE Development Environment
   - User Configuration, Metadata, Machine Configuration
    + Distro Layer, BSP Layer, Software Layers
@@ -80,7 +85,7 @@ Course Slides / Handout Outline:
    + Custom Recipes and Layers
   - SDKs, external tools (Eclipse TCF Agent, remote gdb)
 
-4) 
+N) 
 
  * Hands-On Poky
   - qemux86
